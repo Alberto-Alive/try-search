@@ -1,6 +1,10 @@
 'use strict'
 
+const axios = require('axios');
 const { validate } = use('Validator');
+const Config = use('Config');
+const omdbKey = Config.get('app.omdbkey');
+
 
 class SearchMovieController {
     async index({ request, view, session, response }) { 
@@ -17,8 +21,14 @@ class SearchMovieController {
 
 
         // search on ombd api
+        const searchString = request.input('search');
+        const results = await axios.get(`http://www.omdbapi.com/?apikey=${omdbKey}&s=${searchString}`);
 
-        return view.render('pages/search-result');
+        console.log(results);
+
+        return view.render('pages/search-result', { 
+            results: results.data.Search
+        });
     }
 }
 

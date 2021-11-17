@@ -239,5 +239,7 @@ module.exports = {
     sameSite: false,
     path: '/',
     maxAge: 7200
-  }
+  },
+
+  omdbkey: Env.get('OMDB_KEY', 'abcd')
 }

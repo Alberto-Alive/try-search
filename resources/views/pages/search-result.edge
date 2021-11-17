@@ -7,4 +7,21 @@
         </div>
     </div>
     @include('partials.search-form')
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="list-group movie-search-result"> 
+                @each(res in results) 
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a href="{{ route('movie.view', {id: res.imdbID}) }}">{{res.Title}} ({{res.Year}})</a>
+                        <div class="image-parent">  
+                            <img src="{{res.Poster}}" class="img-fluid" alt="quixote">
+                        </div>
+                    </li>
+                @endeach
+            </ul>
+        </div>
+    </div>
+
+
+
 @endsection
