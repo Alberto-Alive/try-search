@@ -1,0 +1,12 @@
+<div class="row mb-3">
+    <div class="col-sm-12">
+        <form action="{{ route('movies.search') }}" method="get" class="form-inline">
+            <div class="form-group mr-3 w-75">
+                <input type="text" name="search" class="form-control w-100" placeholder="Search for a movie" value="{{ old('search', '')}}">
+            </div>
+            <button class="btn btn-success float-right">Search</button>
+        </form>
+        {{ elIf('<span class="error">$self</span>', getErrorFor('search'), hasErrorFor('search')) }} 
+    </div>
+</div>
+       
