@@ -1,0 +1,26 @@
+@layout('layout')   
+
+@section('content') 
+<div class="row mb-3">  
+    <div class="col-sm-12">
+        <h2> Movie details </h2>
+    </div>
+</div>
+
+<div class="row">       
+    <div class="col-sm-12">
+        <div class="card">  
+            <div class="card-header"> {{movie.Title}}</div>
+            <div class="card-body"> 
+                <p> {{movie.Title}} as released on {{movie.Released}} directed by <strong> {{movie.Director}}</strong></p>
+                <p><strong>Genre</strong>: {{movie.Genre}}</p>
+                <p><strong>Cast</strong>: {{movie.Actors}}</p>
+                <p><strong>Awards</strong>: {{movie.Awards}}</p>
+                <p><strong>Plot</strong>: {{movie.Plot}}</p>
+                <p><strong>IMDB Rating</strong>: {{movie.imdbRating}}/18</p>
+                <p><img src="{{movie.Poster}}" alt="{{movie.Title}}"</p>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

@@ -24,8 +24,6 @@ class SearchMovieController {
         const searchString = request.input('search');
         const results = await axios.get(`http://www.omdbapi.com/?apikey=${omdbKey}&s=${searchString}`);
 
-        console.log(results);
-
         return view.render('pages/search-result', { 
             results: results.data.Search
         });

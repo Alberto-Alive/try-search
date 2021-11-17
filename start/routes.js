@@ -21,4 +21,5 @@ const Route = use('Route')
 Route.get('/', 'WelcomeController.index').as('index');
 Route.get('/movies', 'MovieController.index').as('movies.index');
 Route.get('/search', 'SearchMovieController.index').as('movies.search');
+Route.get('/movie/:id', 'MovieController.view').as('movie.view');
 
